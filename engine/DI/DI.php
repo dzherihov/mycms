@@ -7,7 +7,7 @@ class DI
 	/**
 	* @var $container
 	*/
-	private $container;// = [];
+	private $container = [];
 
 	/**
 	* @param $key
