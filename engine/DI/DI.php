@@ -7,7 +7,7 @@ class DI
 	/**
 	* @var $container
 	*/
-	privat $container = [];
+	private $container;// = [];
 
 	/**
 	* @param $key
@@ -37,7 +37,7 @@ class DI
 	*/
 	public function has($key)
 	{
-		return isset($this->container[$key]);
+		return isset($this->container[$key]) ? $this->container[$key] : null;
 	}
 }
 

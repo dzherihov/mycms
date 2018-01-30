@@ -19,7 +19,7 @@ class Cms
 	// Run CMS
 	public function run()
 	{
-
+		echo 'hello cms';
 	}
 }
 

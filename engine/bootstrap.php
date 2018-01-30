@@ -1,5 +1,9 @@
 <?php 
 
+spl_autoload_register(function ($Cms) {
+    include $Cms . '.php';
+});
+
 use Engine\Cms;
 use Engine\DI\DI;
 
