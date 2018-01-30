@@ -8,10 +8,11 @@ class DispatchedRoute
 	private $parameters;
 
 	/**
+	 * DespatchedRoute constructor.
 	 * @param $controller
 	 * @param array $parameters
 	 */
-	public function __construct ($controller, $parameters = [])
+	public function __construct($controller, $parameters = [])
 	{
 		$this->controller = $controller;
 		$this->parameters = $parameters;

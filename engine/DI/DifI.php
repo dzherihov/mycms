@@ -2,7 +2,7 @@
 
 namespace Engine\DI;
 
-class DI
+class DifI
 {
 	/**
 	* @var $container

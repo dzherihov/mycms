@@ -2,14 +2,19 @@
 
 spl_autoload_register(function ($Cms) {
     include $Cms . '.php';
+    // var_dump($Cms);
 });
 
+
+
+
+
 use Engine\Cms;
-use Engine\DI\DI;
+use Engine\DI\DifI;
 
 try{
 	//Dependency injection
-	$di = new DI();
+	$di = new DifI();
 
 	$services = require __DIR__ . '/config/Service.php';
 
