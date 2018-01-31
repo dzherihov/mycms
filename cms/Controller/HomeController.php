@@ -7,12 +7,13 @@ class HomeController extends CmsController
 {
 	public function index()
 	{
-		echo 'Index Page';
+		$data = ['name' => 'Denis'];
+		$this->view->render('index', $data);
 	}
 
-	public function user()
+	public function news($id)
 	{
-		echo 'User Page';
+		echo $id;
 	}
 }
 

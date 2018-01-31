@@ -1,23 +1,18 @@
 <?php
 
-namespace Cms\Controller;
+namespace Admin\Controller;
 
 use Engine\Controller;
 
-class CmsController extends Controller
+class AdminController extends Controller
 {
 	/**
-	 * CmsController constructor. 
+	 * AdminController constructor. 
 	 * @param \Engine\DI\DI $di
 	 */
 	public function __construct($di)
 	{
 		parent::__construct($di);
-	}
-
-	public function header()
-	{
-		
 	}
 }
 

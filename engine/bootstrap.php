@@ -1,12 +1,37 @@
 <?php 
 
-spl_autoload_register(function ($Cms) {
-    include $Cms . '.php';
+//spl_autoload_register(function ($Cms) {
+    //include $Cms . '.php';
+   // include '..\Engine\DI\DifI.php';
+//require_once( "..\Engine\DI\DifI.php" );
+
+    //include '../Engine/Cms.php';
     // var_dump($Cms);
-});
+//});
+
+//spl_autoload_register(function ($Cms) {
+   // include $Cms . '.php';
+    //include '../' . $Cms . '.php';
+    //include '../Engine/Cms.php';
+    // var_dump($Cms);
+//});
 
 
-
+function __autoload( $className ) {
+  $className = str_replace( "..", "", $className );
+  	if (file_exists( "$className.php" )){ 
+     	require_once( "$className.php" );
+     }
+	else if (file_exists( "..\\$className.php" )){
+		require_once( "..\\$className.php" );
+	}else
+	{
+		throw new \Exception(
+				sprintf('View class %s does not exist!', $className)
+			);
+	}
+}
+ 
 
 
 use Engine\Cms;
