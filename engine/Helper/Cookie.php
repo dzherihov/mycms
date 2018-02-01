@@ -5,7 +5,7 @@ namespace Engine\Helper;
 class Cookie
 {
 
-	public static function set ($key, $value, time = 31536000)
+	public static function set ($key, $value, $time = 31536000)
 	{
 		setcookie($key, $value, time() + $time, '/');
 	}

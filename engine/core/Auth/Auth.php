@@ -2,39 +2,33 @@
 
 namespace Engine\core\Auth;
 
-use Engine\core\Cookie;
+use Engine\Helper\Cookie;
 
 class Auth implements AuthInterface
 {
 	protected $authorized = false;
-	protected $user;
+	protected $hash_user;
 
 	public function authorized()
 	{
 		return $this->authorized;
 	}
 
-	public function user()
+	public function hashUser()
 	{
-		return $this->user;
+		return Cookie::get('auth_user');
 	}
 
 	public function authorize($user)
 	{
-		Cookie::set('auth.authorized', true);
-		Cookie::set('auth.user', $user);
-
-		$this->authorized = true;
-		$this->user       = $user;
+		Cookie::set('auth_authorized', true);
+		Cookie::set('auth_user', $user);
 	}
 
 	public function unAuthorize($user)
 	{
-		Cookie::delete('auth.authorized');
-		Cookie::delete('auth.user');
-
-		$this->authorized = false;
-		$this->user       = null;
+		Cookie::delete('auth_authorized');
+		Cookie::delete('auth_user');
 	}
 
 	public static function salt()

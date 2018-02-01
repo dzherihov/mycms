@@ -37,6 +37,7 @@ function __autoload( $className ) {
 use Engine\Cms;
 use Engine\DI\DifI;
 
+
 try{
 	//Dependency injection
 	$di = new DifI();
