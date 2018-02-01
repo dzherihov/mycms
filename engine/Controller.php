@@ -14,11 +14,17 @@ abstract class Controller
 	protected $db;
 
 	protected $view;
+	
+	protected $config;
+
+	protected $request;
 
 	public function __construct(DifI $di)
 	{
-		$this->di = $di;
-		$this->view = $this->di->get('view');
+		$this->di      = $di;
+		$this->view    = $this->di->get('view');
+		$this->config  = $this->di->get('config');
+		$this->request = $this->di->get('request');
 	}
 }
 
