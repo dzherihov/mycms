@@ -18,7 +18,7 @@ class LoginController extends Controller
 		$this->auth = new Auth();
 
 		if($this->auth->hashUser() !== null) {
-			header('Location: /mycms/admin/');
+			header('Location: /admin/');
  			exit;
 		}
 	}
@@ -58,7 +58,7 @@ class LoginController extends Controller
 
 				$this->auth->authorize($hash);
 
-				header('Location: /mycms/admin/login/');
+				header('Location: /admin/login/');
 				exit;
 			}
 		}

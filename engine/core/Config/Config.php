@@ -23,8 +23,7 @@ class Config
 	 */
 	public static function file($group)
 	{
-		//нужно убрать mycms при переносе на сервер
-		$path = $_SERVER['DOCUMENT_ROOT'] . '/mycms/' . mb_strtolower(ENV) . '/Config/' . $group . '.php';
+		$path = $_SERVER['DOCUMENT_ROOT'] . '/admin/Config/' . $group . '.php';
 
 		if (file_exists($path))
 		{

@@ -11,7 +11,7 @@ class Provider extends AbstractProvider
 
 	public function init()
 	{
-		$router = new Router('http://localhost/mycms/');
+		$router = new Router('http://test1.ru/');
 
 		$this->di->set($this->serviceName, $router);
 	}

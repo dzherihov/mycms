@@ -1,6 +1,6 @@
 <?php
 
-namespace Cms\Controller;
+namespace cms\Controller;
 
 
 class HomeController extends CmsController

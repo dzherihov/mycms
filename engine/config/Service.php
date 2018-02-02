@@ -5,7 +5,8 @@ return [
 	Engine\service\Router\Provider::class,
 	Engine\service\View\Provider::class,
 	Engine\service\Config\Provider::class,
-	Engine\service\Request\Provider::class
+	Engine\service\Request\Provider::class,
+	Engine\service\Load\Provider::class
 ];
 
 ?>

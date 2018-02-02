@@ -3,8 +3,9 @@
 namespace Engine;
 
 use Engine\DI\DifI;
+use Engine\core\Database\QueryBuilder;
 
-abstract class Controller
+abstract class Model
 {
 	/**
 	 * @var \Engine\DI\DI
@@ -12,23 +13,18 @@ abstract class Controller
 	protected $di;
 
 	protected $db;
-
-	protected $view;
 	
 	protected $config;
 
-	protected $request;
-
-	protected $load;
+	protected $queryBuilder;
 
 	public function __construct(DifI $di)
 	{
 		$this->di      = $di;
 		$this->db      = $this->di->get('db');
-		$this->view    = $this->di->get('view');
-		$this->load    = $this->di->get('load');
 		$this->config  = $this->di->get('config');
-		$this->request = $this->di->get('request');
+
+		$this->queryBuilder = new QueryBuilder();
 	}
 }
 

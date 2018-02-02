@@ -21,7 +21,7 @@ class AdminController extends Controller
 
 
 		if($this->auth->hashUser() == null) {
-			header('Location: /mycms/admin/login/');
+			header('Location: /admin/login/');
  			exit;
 		}
 
@@ -36,7 +36,7 @@ class AdminController extends Controller
 	public function logout()
 	{
 		$this->auth->unAuthorize();
-		header('Location: /mycms/admin/login/');
+		header('Location: /admin/login/');
  		exit;
 	}
 }

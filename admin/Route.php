@@ -8,5 +8,7 @@
 	$this->router->add('dashboard', '/admin/', 'DashboardController:index');
 	$this->router->add('logout', '/admin/logout/', 'DashboardController:logout');
 
+	$this->router->add('pages', '/admin/pages/', 'PageController:listing');
+
 
 ?>
