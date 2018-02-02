@@ -9,6 +9,8 @@ class AdminController extends Controller
 {
 	protected $auth;
 
+	public $data = [];
+
 	/**
 	 * AdminController constructor. 
 	 * @param \Engine\DI\DI $di

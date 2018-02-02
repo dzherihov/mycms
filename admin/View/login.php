@@ -30,7 +30,6 @@
 
     <div class="container">
 
-    <!-- Поменять action - убрать mycms -->
         <form class="form-signin" role="form" method="POST" action="/admin/auth/">
             <h2 class="form-signin-heading">Login to CMS</h2>
             <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>

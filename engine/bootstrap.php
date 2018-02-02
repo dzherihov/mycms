@@ -43,7 +43,6 @@ try{
 	$di = new DifI();
 
 	$services = require __DIR__ . '/config/Service.php';
-
 	// Init services
 	foreach($services as $Service)
 	{

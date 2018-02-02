@@ -104,7 +104,7 @@ class UrlDispatcher
 		foreach ($this->routes($method) as $route => $controller) 
 		{
 
-			$pattern = '#s' . $route . '$#s';
+			$pattern = '#^' . $route . '$#s';
 			
 			if (preg_match($pattern, $uri, $parameters))
 			{
