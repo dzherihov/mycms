@@ -17,15 +17,15 @@
 //});
 
 
-function __autoload( $className ) {
+function __autoload( $className ) 
+{
   $className = str_replace( "..", "", $className );
   	if (file_exists( "$className.php" )){ 
      	require_once( "$className.php" );
      }
 	else if (file_exists( "..\\$className.php" )){
 		require_once( "..\\$className.php" );
-	}else
-	{
+	} else {
 		throw new \Exception(
 				sprintf('View class %s does not exist!', $className)
 			);

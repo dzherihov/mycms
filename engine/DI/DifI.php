@@ -39,6 +39,18 @@ class DifI
 	{
 		return isset($this->container[$key]) ? $this->container[$key] : null;
 	}
+
+	public function push($key, $element = [])
+	{
+
+		if ($this->has($kay) !== null) {
+			$this->set($key, []);
+		}
+
+		if(!empty($element)) {
+			$this->container[$key][$element['key']] = $element['value'];
+		}
+	}
 }
 
 ?>

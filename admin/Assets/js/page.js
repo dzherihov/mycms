@@ -19,6 +19,7 @@ var page = {
             },
             success: function(result){
                 console.log(result);
+                window.location = '/admin/pages/edit/' + result;
             }
         });
     },
