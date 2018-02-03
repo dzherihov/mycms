@@ -27,7 +27,10 @@ class AdminController extends Controller
  			exit;
 		}
 
-		$this->checkAuthorization();
+		// Load global language
+		$this->load->language('dashboard/menu');
+		
+		//$this->checkAuthorization();
 	}
 
 	public function checkAuthorization()

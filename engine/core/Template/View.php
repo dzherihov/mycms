@@ -3,9 +3,12 @@
 namespace Engine\core\Template;
 
 use Engine\core\Template\Theme;
+use Engine\DI\DifI;
 
 class View
 {
+
+	public $di;
 	/**
 	 * @var \Engine\core\Template\Theme
 	 */
@@ -14,8 +17,9 @@ class View
 	/**
 	 * View Constructor.
 	 */
-	public function __construct()
+	public function __construct(DifI $di)
 	{
+		$this->di    = $di;
 		$this->theme = new Theme();
 	}
 
@@ -35,6 +39,7 @@ class View
 			);
 		}
 
+		$vars['lang'] = $this->di->get('language');
 		$this->theme->setData($vars);
 		extract($vars);
 

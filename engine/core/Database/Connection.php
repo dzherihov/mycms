@@ -33,13 +33,13 @@ class Connection
 		return $sth->execute($values);
 	}
 
-	public function query($sql, $values = [])
+	public function query($sql, $values = [], $statement = PDO::FETCH_OBJ)
 	{
 		$sth = $this->link->prepare($sql);
 
 		$sth->execute($values);
 
-		$result = $sth->fetchAll(PDO::FETCH_ASSOC);
+		$result = $sth->fetchAll($statement);
 
 		if($result === false){
 			return [];

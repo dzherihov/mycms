@@ -4,30 +4,27 @@
         <div class="container">
             <div class="row">
                 <div class="col page-title">
-                    <h3><?= $page->title ?></h3>
+                    <h3>Create post</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-9">
-                    <form id="formPage">
-                         <input type="hidden" name="page_id" id="formPageId" value="<?= $page->id ?>" />
+                    <form id="formPost">
                         <div class="form-group">
                             <label for="formTitle">Title</label>
-                            <input type="text" name="title" class="form-control" id="formTitle" value="<?= $page->title ?>" placeholder="Title page...">
+                            <input type="text" name="title" class="form-control" id="formTitle" placeholder="Title post...">
                         </div>
                         <div class="form-group">
                             <label for="formContent">Content</label>
-                            <textarea name="content" id="redactor" class="form-control" id="formContent">
-                                <?= $page->content ?>
-                            </textarea>
+                            <textarea name="content" id="redactor" class="form-control" id="formContent"></textarea>
                         </div>
                     </form>
                 </div>
                 <div class="col-3">
                     <div>
-                        <p>Update this page</p>
-                        <button type="submit" class="btn btn-primary" onclick="page.update()">
-                            Update
+                        <p>Publish this post</p>
+                        <button type="submit" class="btn btn-primary" onclick="post.add()">
+                            Publish
                         </button>
                     </div>
                 </div>
