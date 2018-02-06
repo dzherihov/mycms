@@ -26,6 +26,8 @@
 
 	//Setting Routes (GET)
 	$this->router->add('settings-general', '/admin/settings/general/', 'SettingController:general');
+	$this->router->add('settings-update', '/admin/settings/update/', 'SettingController:update', 'POST');
+
 
 
 ?>

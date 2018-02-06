@@ -16,7 +16,7 @@
                         </div>
                         <div class="form-group">
                             <label for="formContent">Content</label>
-                            <textarea name="content" id="redactor" class="form-control" id="formContent"></textarea>
+                            <textarea name="content" id="editor1" rows="10" cols="80" id="formContent"></textarea>
                         </div>
                     </form>
                 </div>
@@ -31,5 +31,5 @@
             </div>
         </div>
     </main>
-
+<script>CKEDITOR.replace( 'editor1' );</script>
 <?php $this->theme->footer(); ?>

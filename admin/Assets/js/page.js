@@ -5,7 +5,7 @@ var page = {
         var formData = new FormData();
 
         formData.append('title', $('#formTitle').val());
-        formData.append('content', $('.redactor-editor').html());
+        formData.append('content', CKEDITOR.instances.editor1.getData());
 
         $.ajax({
             url: '/admin/page/add/',
@@ -29,7 +29,7 @@ var page = {
 
         formData.append('page_id', $('#formPageId').val());
         formData.append('title', $('#formTitle').val());
-        formData.append('content', $('.redactor-editor').html());
+        formData.append('content', CKEDITOR.instances.editor1.getData());
 
         $.ajax({
             url: '/admin/page/update/',

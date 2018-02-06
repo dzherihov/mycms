@@ -17,8 +17,7 @@
     
     <!-- simplelineicons for this template -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
-
-    <link rel="stylesheet" href="/admin/Assets/js/plugins/redactor/redactor.css">
+    <script src="/admin/Assets/js/ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
@@ -60,7 +59,8 @@
                 
                 <div class="right-toolbar">
                     <a href="/admin/logout/">
-                        <i class="icon-logout icons"></i> Logout
+                        <i class="icon-logout icons"></i> 
+                        <?= $lang->dashboardMenu['logout']?>
                     </a>
                 </div>
             </div>

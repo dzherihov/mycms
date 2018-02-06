@@ -9,7 +9,7 @@
             </div>
             <div class="row">
                 <div class="col-9">
-                    <form id="formPage">
+                    <form id="formPost">
                          <input type="hidden" name="post_id" id="formPostId" value="<?= $post->id ?>" />
                         <div class="form-group">
                             <label for="formTitle">Title</label>
@@ -17,9 +17,14 @@
                         </div>
                         <div class="form-group">
                             <label for="formContent">Content</label>
-                            <textarea name="content" id="redactor" class="form-control" id="formContent">
+                          <!--  <textarea name="content" id="redactor" class="form-control" id="formContent">
                                 <?= $post->content ?>
+                            </textarea> -->
+
+                            <textarea name="content" id="editor1" rows="10" cols="80" id="formContent">
+                                 <?= $post->content ?>
                             </textarea>
+                              
                         </div>
                     </form>
                 </div>
@@ -34,5 +39,5 @@
             </div>
         </div>
     </main>
-
+<script>CKEDITOR.replace( 'editor1' );</script>
 <?php $this->theme->footer(); ?>

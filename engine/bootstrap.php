@@ -16,6 +16,7 @@
     // var_dump($Cms);
 //});
 
+require_once __DIR__ . '/Function.php';
 
 function __autoload( $className ) 
 {
@@ -31,7 +32,7 @@ function __autoload( $className )
 			);
 	}
 }
- 
+
 
 
 use Engine\Cms;

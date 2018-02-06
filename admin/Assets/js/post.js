@@ -5,7 +5,7 @@ var post = {
         var formData = new FormData();
 
         formData.append('title', $('#formTitle').val());
-        formData.append('content', $('.redactor-editor').html());
+        formData.append('content', CKEDITOR.instances.editor1.getData());
 
         $.ajax({
             url: '/admin/post/add/',
@@ -29,7 +29,7 @@ var post = {
 
         formData.append('post_id', $('#formPostId').val());
         formData.append('title', $('#formTitle').val());
-        formData.append('content', $('.redactor-editor').html());
+        formData.append('content', CKEDITOR.instances.editor1.getData());
 
         $.ajax({
             url: '/admin/post/update/',

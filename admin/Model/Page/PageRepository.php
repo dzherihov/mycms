@@ -41,7 +41,6 @@ class PageRepository extends Model
 			$page->setTitle($params['title']);
 			$page->setContent($params['content']);
 			$page->save();
-			print_r('YES');
 		}
 	}
 
