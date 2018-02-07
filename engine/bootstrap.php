@@ -18,6 +18,11 @@
 
 require_once __DIR__ . '/Function.php';
 
+class_alias('Engine\\core\\Template\\Asset', 'Asset');
+class_alias('Engine\\core\\Template\\Theme', 'Theme');
+
+use Engine\core\Template\Asset;
+
 function __autoload( $className ) 
 {
 	//echo $className; echo '<br>'; 
@@ -29,6 +34,7 @@ function __autoload( $className )
 	else if (file_exists( "..\\$className.php" )){
 		require_once( "..\\$className.php" );
 	} else {
+		print_r($className);
 		throw new \Exception(
 				sprintf('View class %s does not exist!', $className)
 			);
@@ -39,7 +45,6 @@ function __autoload( $className )
 
 use Engine\Cms;
 use Engine\DI\DifI;
-//use Engine\core\Template\View;
 
 
 try{
