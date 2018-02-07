@@ -34,7 +34,7 @@ class View
     public function render($template, $data = [])
     {
         $templatePath = $this->getTemplatePath($template, ENV);
-
+        
         if (!is_file($templatePath)) {
             throw new \InvalidArgumentException(
                 sprintf('Template "%s" not found in "%s"', $template, $templatePath)

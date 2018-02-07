@@ -1,6 +1,6 @@
 <?php
 
-namespace Engine\Core\Template;
+namespace Engine\core\Template;
 
 class Component
 {

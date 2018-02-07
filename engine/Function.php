@@ -8,19 +8,24 @@
  */
 function path($section)
 {
+    $pathMask = ROOT_DIR . '\\' . '%s';
+    if(ENV == 'Cms') {
+        $pathMask = ROOT_DIR . DS . strtolower(ENV). DS . '%s';
+    }
+
     // Return path to correct section.
     switch (strtolower($section))
     {
         case 'controller':
-            return ROOT_DIR . '/' . 'Controller';
+            return sprintf($pathMask, 'Controller');
         case 'config':
-            return ROOT_DIR . '/' . 'Config';
+            return sprintf($pathMask, 'Config');
         case 'model':
-            return ROOT_DIR . '/' . 'Model';
+            return sprintf($pathMask, 'Model');
         case 'view':
-            return ROOT_DIR . '/' . 'View';
+            return sprintf($pathMask, 'View');
         case 'language':
-            return ROOT_DIR . '/' . 'Language';
+            return sprintf($pathMask, 'Language');
         default:
             return ROOT_DIR;
     }

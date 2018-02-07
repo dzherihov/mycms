@@ -17,7 +17,7 @@ class Connection
 
 	private function connect()
 	{
-		$config = Config::file('database');
+		$config = Config::group('database');
 
 		$dsn = 'mysql:host='.$config['host'].';dbname='.$config['db_name'].';charset='.$config['charset'];
 

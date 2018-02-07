@@ -20,7 +20,9 @@ require_once __DIR__ . '/Function.php';
 
 function __autoload( $className ) 
 {
+	//echo $className; echo '<br>'; 
   $className = str_replace( "..", "", $className );
+
   	if (file_exists( "$className.php" )){ 
      	require_once( "$className.php" );
      }
@@ -37,6 +39,7 @@ function __autoload( $className )
 
 use Engine\Cms;
 use Engine\DI\DifI;
+//use Engine\core\Template\View;
 
 
 try{

@@ -4,7 +4,7 @@ namespace Engine\Helper;
 
 class Common
 {
-	function isPost()
+	static function isPost()
 	{
 		if($_SERVER['REQUEST_METHOD'] == 'POST')
 		{

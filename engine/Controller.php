@@ -34,6 +34,7 @@ abstract class Controller
 		$this->request = $this->di->get('request');
 
 		$this->initVars();
+
 	}
 
 	public function __get($key)
@@ -50,7 +51,6 @@ abstract class Controller
 				$this->{$var} = $this->di->get($var);
 			}
 		}
-
 		return $this;
 	}
 }
