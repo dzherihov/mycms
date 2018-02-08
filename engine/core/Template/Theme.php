@@ -47,6 +47,15 @@ class Theme
         return sprintf(self::URL_THEME_MASK, $baseUrl, $currentTheme);
     }
 
+    public static function title()
+    {
+        $nameSite         = Setting::get('name_site');
+        $description      = Setting::get('description');
+
+        echo $nameSite . ' | ' . $description;
+    }
+
+
     /**
      * @param null $name
      */

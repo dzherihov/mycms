@@ -20,6 +20,8 @@ require_once __DIR__ . '/Function.php';
 
 class_alias('Engine\\core\\Template\\Asset', 'Asset');
 class_alias('Engine\\core\\Template\\Theme', 'Theme');
+class_alias('Engine\\core\\Template\\Setting', 'Setting');
+class_alias('Engine\\core\\Template\\Menu', 'Menu');
 
 use Engine\core\Template\Asset;
 

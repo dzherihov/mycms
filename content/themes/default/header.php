@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog</title>
+    <title><?php Theme::title()?></title>
 
 	<?php Asset::render('css'); ?>
 
@@ -33,24 +33,19 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <a class="navbar-brand" href="index.html">
+                    <?php echo Setting::get('name_site'); ?>        
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    <?php foreach (Menu::getItems() as $item): ?>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="<?= $item->link ?>"><?= $item->name ?></a>
                     </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="post.html">Sample Post</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -65,9 +60,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Clean Blog</h1>
+                        <h1><?php echo Setting::get('name_site'); ?> </h1>
                         <hr class="small">
-                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                        <span class="subheading"><?php echo Setting::get('description'); ?></span>
                     </div>
                 </div>
             </div>
