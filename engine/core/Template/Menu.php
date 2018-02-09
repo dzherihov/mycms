@@ -3,7 +3,7 @@
 namespace Engine\core\Template;
 
 use Engine\DI\DifI;
-use Cms\Model\Menu\MenuRepository;
+use Cms\Model\MenuItem\MenuItemRepository;
 
 class Menu
 {
@@ -14,7 +14,7 @@ class Menu
 	public function __construct($di)
 	{
 		self::$di = $di;
-		self::$menuRepository = new MenuRepository(self::$di);
+		self::$menuRepository = new MenuItemRepository(self::$di);
 	}
 
 	public static function show()
