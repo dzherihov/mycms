@@ -10,11 +10,13 @@
 
     <title>Login to CMS</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../Assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS 
+    <link href="../Assets/css/bootstrap.min.css" rel="stylesheet">-->
 
     <!-- Custom styles for this template -->
     <link href="../Assets/css/login.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/admin/Assets/js/Semantic-UI/semantic.min.css">
+    <script src="/admin/Assets/js/Semantic-UI/semantic.min.js"></script>
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -28,20 +30,54 @@
 
 <body>
 
-    <div class="container">
 
-        <form class="form-signin" role="form" method="POST" action="/admin/auth/">
-            <h2 class="form-signin-heading">Login to CMS</h2>
-            <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
-            <input type="password" name="password" class="form-control" placeholder="Password" required>
-            <label class="checkbox">
-                <input type="checkbox" type="name" value="remember-me"> Remember me
-            </label>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-        </form>
 
-    </div> <!-- /container -->
-
+<div style="width: 20%; margin-top: 5%" class="ui container">
+    <div class="ui cards">
+        <div class="card">
+            <div class="content">
+                <img class="right floated medium ui image" src="../Assets/img/logo.png">
+                <div class="header">
+                    Login to CMS
+                </div>
+                <div class="meta">
+                    Admin panel
+                </div>
+                <div class="description">
+                    <form class="ui form" role="form" method="POST" action="/admin/auth/">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
+                                <i class="mail icon"></i>
+                        </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                <i class="lock icon"></i>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui checkbox">                
+                                <input type="checkbox" type="name" value="remember-me"> 
+                                <label class="checkbox">
+                                    Remember me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="ui horizontal divider ">
+                            <div class="ui two buttons">
+                                <button class="ui button" type="submit">
+                                    Login
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

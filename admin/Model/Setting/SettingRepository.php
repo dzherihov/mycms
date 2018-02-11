@@ -6,15 +6,18 @@ use Engine\Model;
 
 class SettingRepository extends Model
 {
+	const SECTION_GENERAL = 'general';
+
 	public function getSettings()
 	{
 		$sql = $this->queryBuilder
 				->select()
 				->from('setting')
+				->where('section', self::SECTION_GENERAL)
 				->orderBy('id', 'ASC')
 				->sql();
 
-		return $this->db->query($sql);
+		return $this->db->query($sql, $this->queryBuilder->values);
 	}
 
 	public function getSettingValue($keyField)
@@ -43,6 +46,17 @@ class SettingRepository extends Model
 			$this->db->execute($sql, $this->queryBuilder->values);
 			}
 		}
+	}
+
+	public function updateActiveTheme($theme)
+	{
+		$sql = $this->queryBuilder
+				->update('setting')
+				->set(['value' => $theme])
+				->where('key_field', 'active_theme')
+				->sql();
+
+		$this->db->execute($sql, $this->queryBuilder->values);
 	}
 
 }

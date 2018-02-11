@@ -28,6 +28,14 @@ class SettingController extends AdminController
 		$this->view->render('setting/menus', $this->data);
 	}
 
+    public function themes()
+    {
+        $this->data['themes'] = getThemes();
+        $this->data['activeTheme'] = \Setting::get('active_theme');
+
+        $this->view->render('setting/themes', $this->data);
+    }
+
 	public function ajaxMenuAdd()
     {
         $params = $this->request->post;
@@ -72,6 +80,17 @@ class SettingController extends AdminController
         }
     }
 
+    public function ajaxMenuUpdateItem()
+    {
+        $params = $this->request->post;
+
+        $this->load->model('MenuItem', false, 'Cms');
+
+        if (isset($params['item_id']) && strlen($params['item_id']) > 0) {
+            $this->model->menuItem->update($params);
+        }
+    }
+
     public function ajaxMenuRemoveItem()
     {
         $params = $this->request->post;
@@ -93,6 +112,15 @@ class SettingController extends AdminController
 
 		$this->model->setting->updateSetting($params);
 	}
+
+    public function activateTheme()
+    {
+        $params = $this->request->post;
+
+        $this->load->model('Setting');
+
+        $this->model->setting->updateActiveTheme($params['theme']);
+    }
 }
 
 ?>

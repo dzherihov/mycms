@@ -1,8 +1,9 @@
 var post = {
     ajaxMethod: 'POST',
 
-    add: function() {
+    add: function(element) {
         var formData = new FormData();
+        var button = $(element);
 
         formData.append('title', $('#formTitle').val());
         formData.append('content', CKEDITOR.instances.editor1.getData());
@@ -15,7 +16,8 @@ var post = {
             processData: false,
             contentType: false,
             beforeSend: function(){
-
+                button.addClass('loading');
+                button.addClass('disabled');
             },
             success: function(result){
                 console.log(result);
@@ -24,8 +26,9 @@ var post = {
         });
     },
 
-    update: function() {
+    update: function(element) {
         var formData = new FormData();
+        var button = $(element);
 
         formData.append('post_id', $('#formPostId').val());
         formData.append('title', $('#formTitle').val());
@@ -39,10 +42,12 @@ var post = {
             processData: false,
             contentType: false,
             beforeSend: function(){
-
+                button.addClass('loading');
+                button.addClass('disabled');
             },
             success: function(result){
                 console.log(result);
+                window.location.reload();
             }
         });
     }

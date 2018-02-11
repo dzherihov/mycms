@@ -27,12 +27,15 @@
 	//Setting Routes (GET)
 	$this->router->add('settings-general', '/admin/settings/general/', 'SettingController:general');
 	$this->router->add('settings-menus', '/admin/settings/appearance/menus/', 'SettingController:menus');
+	$this->router->add('settings-theme', '/admin/settings/appearance/themes/', 'SettingController:themes');
 	//Setting Routes (POST)
 	$this->router->add('settings-update', '/admin/settings/update/', 'SettingController:update', 'POST');
 	$this->router->add('setting-add-menu', '/admin/setting/ajaxMenuAdd/', 'SettingController:ajaxMenuAdd', 'POST');
 	$this->router->add('setting-add-menu-item', '/admin/setting/ajaxMenuAddItem/', 'SettingController:ajaxMenuAddItem', 'POST');
 	$this->router->add('setting-sort-menu-items', '/admin/setting/ajaxMenuSortItems/', 'SettingController:ajaxMenuSortItems', 'POST');
 	$this->router->add('setting-remove-menu-item', '/admin/setting/ajaxMenuRemoveItem/', 'SettingController:ajaxMenuRemoveItem', 'POST');
+	$this->router->add('setting-update-menu-item', '/admin/settings/ajaxMenuUpdateItem/', 'SettingController:ajaxMenuUpdateItem', 'POST');
+	$this->router->add('setting-update-theme', '/admin/settings/activateTheme/', 'SettingController:activateTheme', 'POST');
 
 
 ?>

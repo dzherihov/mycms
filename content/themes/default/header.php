@@ -41,11 +41,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <?php foreach (Menu::getItems() as $item): ?>
-                    <li>
-                        <a href="<?= $item->link ?>"><?= $item->name ?></a>
+                    <?php foreach (Menu::getItems(1) as $item): ?>
+                    
+                        <a class="navbar-brand" href="<?php echo $item->link ?>"><?php echo $item->name ?></a> 
                     </li>
-                    <?php endforeach; ?>
+                    <?php  endforeach; ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

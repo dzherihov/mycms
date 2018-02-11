@@ -1,31 +1,31 @@
 <?php $this->theme->header(); ?>
-
+ 
 <main>
-    <div class="container">
+    <div class="ui container">
         <div class="row">
-            <div class="col page-title">
+            <div class="column page-title">
                 <h3>Settings</h3>
             </div>
         </div>
         <div class="row">
-                <div class="col">
+                <div class="column">
                     <div class="setting-tabs">
                         <?php Theme::block('setting/tabs') ?>
                     </div>
                 </div>
             </div>
         <div class="row">
-            <div class="col">
-                <form id="settingForm">
+            <div class="column">
+                <form class="ui form" id="settingForm">
                     <?php foreach($settings as $setting):?>
                     <?php if($setting->key_field == 'language'): ?>
                     
-                     <div class="form-group row">
-                        <label for="formLangSite" class="col-2 col-form-label">
+                     <div class="inline fields">
+                        <label style="width: 20%" for="formLangSite" class="column-2 column-form-label">
                             <?= $setting->name ?>
                         </label>
-                        <div class="col-10">
-                            <select class="form-control" name="<?= $setting->key_field ?>" id="formLangSite">
+                        <div style="width: 80%">
+                            <select class="ui dropdown" name="<?= $setting->key_field ?>" id="formLangSite">
                             <?php foreach ($languages as $language): ?>
                                 <option value="<?= $language->info->key ?>">
                                     <?= $language->info->title ?>
@@ -37,11 +37,11 @@
 
                     <?php else: ?>
 
-                    <div class="form-group row">
-                        <label for="formNameSite" class="col-2 col-form-label">
+                    <div class="inline fields">
+                        <label style="width: 20%" for="formNameSite" class="column-2 column-form-label">
                             <?= $setting->name ?>
                         </label>
-                        <div class="col-10">
+                        <div style="width: 80%">
                             <input class="form-control" type="text" name="<?= $setting->key_field ?>" value="<?= $setting->value ?>" id="formNameSite">
                         </div>
                     </div>
@@ -49,11 +49,12 @@
 
                     <?php endforeach; ?>
                    
-                    <button type="submit" class="btn btn-primary" onclick="setting.update(); return false;">Save changes</button>
+                    <button id="loadButt" type="submit" class="ui primary button" onclick="setting.update(this); return false;">Save changes</button>
                 </form>
             </div>
         </div>
     </div>
 </main>
+
 
 <?php $this->theme->footer(); ?>

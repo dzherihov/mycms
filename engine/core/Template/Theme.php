@@ -74,7 +74,6 @@ class Theme
     {
         $name = (string) $name;
         $file = self::detectNameFile($name, __FUNCTION__);
-
         Component::load($file);
     }
 

@@ -13,8 +13,7 @@ class Component
      */
     public static function load($name, $data = [])
     {
-        $templateFile = ROOT_DIR . '/content/themes/default/' . $name . '.php';
-
+        $templateFile = View::getThemePath() . $name . '.php';
         if (ENV == 'Admin') {
             $templateFile = path('view') . '/' . $name . '.php';
         }

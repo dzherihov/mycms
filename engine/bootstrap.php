@@ -22,6 +22,7 @@ class_alias('Engine\\core\\Template\\Asset', 'Asset');
 class_alias('Engine\\core\\Template\\Theme', 'Theme');
 class_alias('Engine\\core\\Template\\Setting', 'Setting');
 class_alias('Engine\\core\\Template\\Menu', 'Menu');
+class_alias('Engine\\core\\Customize\\Customize', 'Customize');
 
 use Engine\core\Template\Asset;
 

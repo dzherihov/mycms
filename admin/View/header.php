@@ -6,14 +6,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-
+    <link rel="stylesheet" type="text/css" href="/admin/Assets/js/Semantic-UI/semantic.min.css">
     <title>Админ-панель</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="http://test1.ru/admin/Assets/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="http://test1.ru/admin/Assets/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- Custom styles for this template -->
-    <link href="http://test1.ru/admin/Assets/css/dashboard.css" rel="stylesheet">
+    <link href="/admin/Assets/css/dashboard.css" rel="stylesheet">
     
     <!-- simplelineicons for this template -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
@@ -24,45 +24,26 @@
     <header>
         <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
             <div class="container">
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand" href="#">Admin CMS</a>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/admin/">
-                                <i class="icon-speedometer icons"></i> 
-                                <?= $lang->dashboardMenu['home']?>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin/pages/">
-                                <i class="icon-doc icons"></i> 
-                                <?= $lang->dashboardMenu['pages']?>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin/posts/">
-                                <i class="icon-pencil icons"></i> 
-                                <?= $lang->dashboardMenu['posts']?>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="/admin/settings/general/">
-                                <i class="icon-equalizer icons"></i> 
-                                <?= $lang->dashboardMenu['settings']?>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+               
+               
+                <div class="ui pointing menu" id="navbarNavDropdown">
+                            <div class="item">
+                                  <a class="navbar-brand" href="http://test1.ru"> <?php echo Setting::get('name_site'); ?> </a>
+                            </div>
+                            <?php foreach (Customize::getInstance()->getAdminMenuItems() as $key => $item): ?>
+                                <a class="item" href="<?= $item['urlPath'] ?>">
+                                    <i class="<?= $item['classIcon'] ?>"></i>
+                                        <?= $lang->dashboardMenu[$key] ?>
+                                </a>
+                            <?php endforeach; ?>
+                            <div class="right menu">
+                                <a class="item" href="/admin/logout/">
+                                    <?= $lang->dashboardMenu['logout']?>
+                                    <i class="sign out icon"></i>
+                                </a>         
+                            </div>
                 
-                <div class="right-toolbar">
-                    <a href="/admin/logout/">
-                        <i class="icon-logout icons"></i> 
-                        <?= $lang->dashboardMenu['logout']?>
-                    </a>
-                </div>
+               
             </div>
         </nav>
     </header>

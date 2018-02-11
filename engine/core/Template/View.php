@@ -80,7 +80,11 @@ class View
     private function getTemplatePath($template, $env = null)
     {
         if ($env === 'Cms') {
-            return ROOT_DIR . '/content/themes/default/' . $template . '.php';
+            $theme = \Setting::get('active_theme');
+            if ($theme == '') {
+                $theme = \Engine\core\Config\Config::item('defaultTheme');
+            }
+            return ROOT_DIR . '/content/themes/'. $theme. '/' . $template . '.php';
         }
 
         return path('view') . '/' . $template . '.php';
@@ -88,7 +92,7 @@ class View
 
      public static function getThemePath()
     {
-
-        return ROOT_DIR . '/content/themes/default/';
+        $theme = \Setting::get('active_theme');
+        return ROOT_DIR . '/content/themes/' . $theme . '/';
     }
 }

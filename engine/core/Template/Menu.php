@@ -22,9 +22,9 @@ class Menu
 
 	}
 
-	public static function getItems()
+	public static function getItems($menuId)
 	{
-		return self::$menuRepository->getAllItems();
+		return self::$menuRepository->getItems($menuId);
 	}
 
 }
