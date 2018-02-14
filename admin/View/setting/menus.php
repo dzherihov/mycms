@@ -23,9 +23,27 @@
 
                             <div class="ui fluid vertical menu">
                                 <?php foreach($menus as $menu): ?>
-                                        <a class="<?php if ($menuId == $menu->id) echo ' active'; ?> item" href="?menu_id=<?php echo $menu->id ?>">
+                                        <!--<a class="<?php if ($menuId == $menu->id) //echo ' active'; ?> item" href="?menu_id=<?php //echo $menu->id ?>">
+                                            <?php //echo $menu->name ?>
+                                        </a> -->
+
+                                    <div class="ui two attached selec buttons">
+                                        <a style="width: 80%" class="ui <?php if ($menuId == $menu->id) echo ' active'; ?>basic icon button" href="?menu_id=<?php echo $menu->id ?>">
                                             <?php echo $menu->name ?>
                                         </a>
+                                        
+                                        <button onclick="menu.removeMenu(<?= $menu->id ?>)" style="width: 20%" class="ui  icon button">
+                                            <i class="trash outline red icon"></i>
+                                        </button>
+                                    </div>
+
+
+                                <?php endforeach; ?>
+                            </div>
+
+                            <div class="ui middle aligned divided list">
+                                <?php foreach($menus as $menu): ?>
+
                                 <?php endforeach; ?>
                             </div>
  

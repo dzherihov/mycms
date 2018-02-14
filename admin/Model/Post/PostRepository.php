@@ -44,6 +44,17 @@ class PostRepository extends Model
 		}
 	}
 
+	public function remove ($postId)
+    {
+    	$sql = $this->queryBuilder
+    		->delete()
+    		->from('post')
+    		->where('id', $postId)
+    		->sql();
+    		
+    	return $this->db->query($sql, $this->queryBuilder->values);
+    }
+
 }
 
 ?>

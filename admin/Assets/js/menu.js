@@ -89,7 +89,7 @@ var menu = {
         });
     },
 
-    removeItem: function(itemId, element) {
+    removeItem: function(itemId) {
 
         if(!confirm('Delete the menu item?')) {
             return false;
@@ -114,6 +114,35 @@ var menu = {
             },
             success: function(result){
                 $('.menu-item-' + itemId).remove();
+            }
+        });
+    },
+
+    removeMenu: function(menuId) {
+
+        if(!confirm('Delete the menu?')) {
+            return false;
+        }
+
+        var formData = new FormData();
+
+        formData.append('menu_id', menuId);
+
+        if (menuId < 1) {
+            return false;
+        }
+
+        $.ajax({
+            url: '/admin/setting/ajaxMenuRemove/',
+            type: this.ajaxMethod,
+            data: formData,
+            processData: false,
+            contentType: false,
+            beforeSend: function(){
+
+            },
+            success: function(result){
+                window.location = '/admin/settings/appearance/menus/';
             }
         });
     }

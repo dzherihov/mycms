@@ -50,6 +50,35 @@ var page = {
                 window.location.reload();
             }
         });
+    },
+
+    remove: function(pageId) {
+
+        if(!confirm('Delete the page?')) {
+            return false;
+        }
+
+        var formData = new FormData();
+
+        formData.append('page_id', pageId);
+
+        if (pageId < 1) {
+            return false;
+        }
+
+        $.ajax({
+            url: '/admin/page/remove/',
+            type: this.ajaxMethod,
+            data: formData,
+            processData: false,
+            contentType: false,
+            beforeSend: function(){
+
+            },
+            success: function(result){
+                window.location = '/admin/pages/';
+            }
+        });
     }
 };
 

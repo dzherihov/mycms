@@ -51,6 +51,19 @@ class PageController extends AdminController
 			echo $pageId;
 		}
 	}
+
+	public function remove()
+    {
+        $params = $this->request->post;
+
+        $this->load->model('Page');
+
+        if (isset($params['page_id']) && strlen($params['page_id']) > 0) {
+            $removeItem = $this->model->page->remove($params['page_id']);
+
+            echo $removeItem;
+        }
+    }
 }
 
 ?>

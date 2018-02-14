@@ -9,8 +9,8 @@
             </div>
             <div class="ui grid">
                 <div class="fourteen wide column">
-                    <form class="ui form" id="formPage">
-                        <div class="field">
+                    <form class="ui form segment" id="formPage">
+                        <div id="fieldTitle" class="field">
                             <label for="formTitle">Title</label>
                             <input type="text" name="title" class="form-control" id="formTitle" placeholder="Title page...">
                         </div>
@@ -23,7 +23,7 @@
                 <div class="two wide column">
                     <div>
                         <p>Publish this page</p>
-                        <button type="submit" class="ui primary button" onclick="page.add(this)">
+                        <button id="createButt" type="submit" class="ui primary button" onclick="emptyField('#fieldTitle');">
                             Publish
                         </button>
                     </div>
@@ -31,5 +31,22 @@
             </div>
         </div>
     </main>
+
+ <script type="text/javascript">
+
+        function emptyField(element)
+        {
+            var input = $(element);
+            if($('#formTitle').val() == '') {
+                input.addClass('error');
+            }
+            else {
+                page.add('#createButt');
+                input.removeClass('error');
+            }
+        }
+
+    </script>
+
 <script>CKEDITOR.replace( 'editor1' );</script>
 <?php $this->theme->footer(); ?>

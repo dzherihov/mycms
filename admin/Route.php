@@ -15,6 +15,7 @@
 	//Pages Routes (POST)
 	$this->router->add('page-add', '/admin/page/add/', 'PageController:add', 'POST');
 	$this->router->add('page-update', '/admin/page/update/', 'PageController:update', 'POST');
+	$this->router->add('page-remove', '/admin/page/remove/', 'PageController:remove', 'POST');
 
 	//Post Routes (GET)
 	$this->router->add('posts', '/admin/posts/', 'PostController:listing');
@@ -23,6 +24,7 @@
 	//Post Routes (POST)
 	$this->router->add('post-add', '/admin/post/add/', 'PostController:add', 'POST');
 	$this->router->add('post-update', '/admin/post/update/', 'PostController:update', 'POST');
+	$this->router->add('post-remove', '/admin/post/remove/', 'PostController:remove', 'POST');
 
 	//Setting Routes (GET)
 	$this->router->add('settings-general', '/admin/settings/general/', 'SettingController:general');
@@ -31,6 +33,8 @@
 	//Setting Routes (POST)
 	$this->router->add('settings-update', '/admin/settings/update/', 'SettingController:update', 'POST');
 	$this->router->add('setting-add-menu', '/admin/setting/ajaxMenuAdd/', 'SettingController:ajaxMenuAdd', 'POST');
+	$this->router->add('setting-romove-menu', '/admin/setting/ajaxMenuRemove/', 'SettingController:ajaxMenuRemove', 'POST');
+
 	$this->router->add('setting-add-menu-item', '/admin/setting/ajaxMenuAddItem/', 'SettingController:ajaxMenuAddItem', 'POST');
 	$this->router->add('setting-sort-menu-items', '/admin/setting/ajaxMenuSortItems/', 'SettingController:ajaxMenuSortItems', 'POST');
 	$this->router->add('setting-remove-menu-item', '/admin/setting/ajaxMenuRemoveItem/', 'SettingController:ajaxMenuRemoveItem', 'POST');

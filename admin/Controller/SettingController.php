@@ -121,6 +121,19 @@ class SettingController extends AdminController
 
         $this->model->setting->updateActiveTheme($params['theme']);
     }
+
+    public function ajaxMenuRemove()
+    {
+        $params = $this->request->post;
+
+        $this->load->model('Menu', false, 'Cms');
+
+        if (isset($params['menu_id']) && strlen($params['menu_id']) > 0) {
+            $removeItem = $this->model->menu->remove($params['menu_id']);
+
+            echo $removeItem;
+        }
+    }
 }
 
 ?>

@@ -9,9 +9,9 @@
             </div>
             <div class="ui grid">
                 <div class="fourteen wide column">
-                    <form class="ui form" id="formPage">
+                    <form class="ui form segment" id="formPage">
                          <input type="hidden" name="page_id" id="formPageId" value="<?= $page->id ?>" />
-                        <div class="field">
+                        <div id = "fieldTitle" class="field">
                             <label for="formTitle">Title</label>
                             <input type="text" name="title" class="form-control" id="formTitle" value="<?= $page->title ?>" placeholder="Title page...">
                         </div>
@@ -23,16 +23,35 @@
                         </div>
                     </form>
                 </div>
+
                 <div class="two wide column">
-                    <div>
-                        <p>Update this page</p>
-                        <button type="submit" class="ui primary button" onclick="page.update(this)">
+                    <p>Update this page</p>
+                    <div class="ui vertical buttons">
+                        
+                        <button id ='updateButt' data-tooltip="Save page" type="submit" class="ui primary button" onclick="emptyField('#fieldTitle');">
                             Update
                         </button>
+                         <button data-tooltip="Delete page" onclick="page.remove($('#formPageId').val());" class="ui red button">Delete</button>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <script type="text/javascript">
+
+        function emptyField(element)
+        {
+            var input = $(element);
+            if($('#formTitle').val() == '') {
+                input.addClass('error');
+            }
+            else {
+                page.update('#updateButt')
+                input.removeClass('error');
+            }
+        }
+
+    </script>
 <script>CKEDITOR.replace( 'editor1' );</script>
 <?php $this->theme->footer(); ?>

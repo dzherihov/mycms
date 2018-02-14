@@ -41,7 +41,7 @@
               <td class="center aligned collapsing">
                 <div class="ui small basic icon buttons">
                   <button data-tooltip="Edit page" onclick="location.href = '/admin/pages/edit/<?= $page->id ?>'" class="ui button"><i class="edit icon"></i></button>
-                  <button data-tooltip="Delete page" onclick="location.href = '#'" class="ui button"><i class="trash outline icon"></i></button>
+                  <button data-tooltip="Delete page" onclick="page.remove(<?= $page->id ?>)" class="ui  button"><i class="trash outline icon"></i></button>
                 </div>
               </td>
     			</tr>

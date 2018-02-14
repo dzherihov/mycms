@@ -44,6 +44,18 @@ class PageRepository extends Model
 		}
 	}
 
+	public function remove ($pageId)
+    {
+    	$sql = $this->queryBuilder
+    		->delete()
+    		->from('page')
+    		->where('id', $pageId)
+    		->sql();
+    		
+    	return $this->db->query($sql, $this->queryBuilder->values);
+    }
+
+
 }
 
 ?>

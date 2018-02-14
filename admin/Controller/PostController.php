@@ -51,6 +51,19 @@ class PostController extends AdminController
 			echo $postId;
 		}
 	}
+
+	public function remove()
+    {
+        $params = $this->request->post;
+
+        $this->load->model('Post');
+
+        if (isset($params['post_id']) && strlen($params['post_id']) > 0) {
+            $removeItem = $this->model->post->remove($params['post_id']);
+
+            echo $removeItem;
+        }
+    }
 }
 
 ?>

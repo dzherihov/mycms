@@ -32,6 +32,26 @@ class MenuRepository extends Model
         return $query;
     }
 
+    public function remove ($menuId)
+    {
+        $sql = $this->queryBuilder
+            ->delete()
+            ->from('menu_item')
+            ->where('menu_id', $menuId)
+            ->sql();
+            
+        $this->db->query($sql, $this->queryBuilder->values);
+
+
+        $sql2 = $this->queryBuilder
+            ->delete()
+            ->from('menu')
+            ->where('id', $menuId)
+            ->sql();
+            
+        return $this->db->query($sql2, $this->queryBuilder->values);
+    }
+
 }
 
 ?>

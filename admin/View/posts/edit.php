@@ -26,11 +26,12 @@
                     </form>
                 </div>
                 <div class="two wide column">
-                    <div>
-                        <p>Update this post</p>
-                        <button type="submit" class="ui primary button" onclick="post.update(this)">
+                     <p>Update this page</p>
+                    <div class="ui vertical buttons">
+                        <button data-tooltip="Save post" type="submit" class="ui primary button" onclick="post.update(this)">
                             Update
                         </button>
+                        <button data-tooltip="Delete post" onclick="post.remove($('#formPostId').val())" class="ui red button">Delete</button>
                     </div>
                 </div>
             </div>
