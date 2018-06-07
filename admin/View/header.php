@@ -36,10 +36,12 @@
                                         <?= $lang->dashboardMenu[$key] ?>
                                 </a>
                             <?php endforeach; ?>
+
                             <div class="right menu">
                                 <a class="item" href="/admin/logout/">
-                                    <?= $lang->dashboardMenu['logout']?>
+                                    <?= $lang->dashboardMenu['logout']; echo " - ".$_COOKIE["auth_login"]?>
                                     <i class="sign out icon"></i>
+                                
                                 </a>         
                             </div>
                 

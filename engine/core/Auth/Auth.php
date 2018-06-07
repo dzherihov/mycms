@@ -19,10 +19,12 @@ class Auth implements AuthInterface
 		return Cookie::get('auth_user');
 	}
 
-	public function authorize($user)
+	public function authorize($user, $login, $id)
 	{
 		Cookie::set('auth_authorized', true);
 		Cookie::set('auth_user', $user);
+		Cookie::set('auth_login', $login);
+		Cookie::set('auth_id', $id);
 	}
 
 	public function unAuthorize($user)

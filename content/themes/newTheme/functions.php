@@ -1,9 +1,9 @@
 <?php
-/**
+
 // Bootstrap Core CSS
 Asset::css('vendor/bootstrap/css/bootstrap.min');
 // Theme CSS
-Asset::css('css/clean-blog.min');
+Asset::css('css/clean-blog');
 // Custom Fonts
 Asset::css('vendor/font-awesome/css/font-awesome.min');
 
@@ -16,5 +16,5 @@ Asset::js('js/jqBootstrapValidation');
 Asset::js('js/contact_me');
 // Theme JavaScript 
 Asset::js('js/clean-blog.min');
-*/
+
 ?>

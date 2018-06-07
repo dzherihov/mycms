@@ -11,12 +11,12 @@
                 <div class="fourteen wide column">
                     <form class="ui form segment" id="formPage">
                         <div id="fieldTitle" class="field">
-                            <label for="formTitle">Title</label>
+                            <label for="formTitle">Title *</label>
                             <input type="text" name="title" class="form-control" id="formTitle" placeholder="Title page...">
                         </div>
                         <div class="field">
                             <label for="formContent">Content</label>
-                            <textarea name="content" id="editor1" rows="10" cols="80" id="formContent"></textarea>
+                            <textarea name="content" id="editor1" rows="10" cols="80" id="formContent">&emsp;</textarea>
                         </div>
                     </form>
                 </div>

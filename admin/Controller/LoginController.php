@@ -47,7 +47,7 @@ class LoginController extends Controller
 			$user = $query[0];
 			if($user->role == 'admin') {
 				$hash = md5($user->id . $user->email . $user->password . $this->auth->salt());
-
+				$login = stristr($user->email, '@', true);
 				$sql = $queryBuilder
 					->update('user')
 					->set(['hash' => $hash])
@@ -56,7 +56,15 @@ class LoginController extends Controller
 
 				$this->db->execute($sql, $queryBuilder->values);
 
-				$this->auth->authorize($hash);
+				$sql = $queryBuilder
+					->update('user')
+					->set(['login' => $login])
+					->where('id', $user->id)
+					->sql();
+
+				$this->db->execute($sql, $queryBuilder->values);
+
+				$this->auth->authorize($hash, $login, $user->id);
 
 				header('Location: /admin/login/');
 				exit;

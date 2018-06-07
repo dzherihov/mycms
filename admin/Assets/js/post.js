@@ -5,7 +5,12 @@ var post = {
         var formData = new FormData();
         var button = $(element);
 
+
         formData.append('title', $('#formTitle').val());
+        formData.append('id_author', $('#formAuthId').val());
+        formData.append('seo_description', $('#formSeoDescription').val());
+        formData.append('seo_keywords', $('#formSeoKeywords').val());
+        formData.append('status', $('input[name="status"]:checked').val());
         formData.append('content', CKEDITOR.instances.editor1.getData());
 
         $.ajax({
@@ -31,7 +36,11 @@ var post = {
         var button = $(element);
 
         formData.append('post_id', $('#formPostId').val());
+        formData.append('id_author', $('#formAuthId').val());
         formData.append('title', $('#formTitle').val());
+        formData.append('seo_description', $('#formSeoDescription').val());
+        formData.append('seo_keywords', $('#formSeoKeywords').val());
+        formData.append('status', $('input[name="status"]:checked').val());
         formData.append('content', CKEDITOR.instances.editor1.getData());
 
         $.ajax({

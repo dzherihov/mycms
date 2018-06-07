@@ -20,6 +20,10 @@ class View
 
     protected $menu;
 
+    protected $post;
+    
+    protected $user;
+
     /**
      * View constructor.
      * @param DI $di
@@ -30,6 +34,8 @@ class View
         $this->theme   = new Theme();
         $this->setting = new Setting($di);
         $this->menu    = new Menu($di);
+        $this->post    = new Post($di);
+        $this->user    = new User($di);
     }
 
     /**

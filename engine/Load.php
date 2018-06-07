@@ -4,6 +4,8 @@ namespace Engine;
 
 use Engine\DI\DifI;
 
+use Engine\core\Template\Setting;
+
 class Load
 {
     const MASK_MODEL_ENTITY     = '\%s\Model\%s\%s';
@@ -50,9 +52,11 @@ class Load
 
     public function language ($path)
     {
+        
+        $lang = Setting::get('language');
         $file = sprintf(
             self::FILE_MASK_LANGUAGE,
-            'english', $path
+            $lang, $path
         );
 
         $content = parse_ini_file($file, true);
@@ -61,6 +65,7 @@ class Load
         $languageName = $this->toCamelClass($path);
 
         $language = $this->di->get('language') ?: new \stdClass();
+        //var_dump(Setting::get('language'));
         $language->{$languageName} = $content;
 
         $this->di->set('language', $language);
