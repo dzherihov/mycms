@@ -55,22 +55,22 @@
                                   <label>True</label>
                                 </div>
                               </div>
-                               </form>
+                              
                     </div>
+                    </form>
                     <div class="ui horizontal divider"><i class="bar chart icon"></i></div>
                     <div class="ui buttons grid">
                         <button id="createButt" type="submit" class="ui primary button" onclick="emptyField('#fieldEnpty');">
                             Publish
                         </button>
                          </div>
-                     
+                      
                 </div>
                 </div>
                
-                    </div>
-                </div>
-            </div>
-        </div>
+              </div>
+          </div>
+
     </main>
 
 <script type="text/javascript">

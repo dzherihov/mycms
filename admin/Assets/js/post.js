@@ -12,7 +12,7 @@ var post = {
         formData.append('seo_keywords', $('#formSeoKeywords').val());
         formData.append('status', $('input[name="status"]:checked').val());
         formData.append('content', CKEDITOR.instances.editor1.getData());
-
+        
         $.ajax({
             url: '/admin/post/add/',
             type: this.ajaxMethod,

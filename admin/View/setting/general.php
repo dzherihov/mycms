@@ -27,8 +27,9 @@
                         <div style="width: 80%">
                             <select class="ui dropdown" name="<?= $setting->key_field ?>" id="formLangSite">
                             <?php foreach ($languages as $language): ?>
-                                <option value="<?= $language->info->key ?>">
+                                <option id="<?= $language->info->key ?>" value="<?= $language->info->key ?>">
                                     <?= $language->info->title ?>
+                                     <? $lang = $setting->value ?>
                                 </option>
                             <?php endforeach; ?>            
                             </select>
@@ -43,6 +44,7 @@
                         </label>
                         <div style="width: 80%">
                             <input class="form-control" type="text" name="<?= $setting->key_field ?>" value="<?= $setting->value ?>" id="formNameSite">
+                           
                         </div>
                     </div>
                     <?php endif; ?>
@@ -58,3 +60,6 @@
 
 
 <?php $this->theme->footer(); ?>
+<script type="text/javascript">
+    $("#formLangSite>option[value='<?= $lang ?>']").attr("selected", "selected");
+</script>
