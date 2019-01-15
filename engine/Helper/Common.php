@@ -30,6 +30,19 @@ class Common
 
 		return $pathUrl;
 	}
+
+	 /**
+     * @param string $string
+     * @param string $find
+     * @return bool
+     */
+    static function searchMatchString($string, $find)
+    {
+        if (strripos($string, $find) !== false) {
+            return true;
+        }
+        return false;
+    }
 }
 
 ?>

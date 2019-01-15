@@ -23,6 +23,8 @@
      				  <th scope="col">№</th>
       				<th scope="col">Title</th>
       				<th scope="col">Date</th>
+              <th scope="col">Status</th>
+              <th scope="col">Type</th>
               <th style="width: 10%"></th>
     			</tr>
   			</thead>
@@ -38,6 +40,8 @@
       					</a>		
       				</td>
       				<td><?= $page->date ?></td>
+              <td><?= $page->status ?></td>
+              <td><?= $page->type ?></td>
               <td class="center aligned collapsing">
                 <div class="ui small basic icon buttons">
                   <button data-tooltip="Edit page" onclick="location.href = '/admin/pages/edit/<?= $page->id ?>'" class="ui button"><i class="edit icon"></i></button>

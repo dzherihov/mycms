@@ -22,6 +22,7 @@ class Asset
     public static function css($link)
     {
         $file = View::getThemePath() . DS . $link . self::EXT_CSS;
+
         if (is_file($file)) {
             self::$container['css'][] = [
                 'file' => Theme::getUrl() . '/' . $link . self::EXT_CSS

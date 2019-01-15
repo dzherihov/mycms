@@ -23,6 +23,7 @@ class_alias('Engine\\core\\Template\\Theme', 'Theme');
 class_alias('Engine\\core\\Template\\Setting', 'Setting');
 class_alias('Engine\\core\\Template\\Menu', 'Menu');
 class_alias('Engine\\core\\Template\\Post', 'Post');
+//class_alias('Engine\\core\\Template\\Page', 'Page2');
 class_alias('Engine\\core\\Template\\User', 'User');
 class_alias('Engine\\core\\Customize\\Customize', 'Customize');
 

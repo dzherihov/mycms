@@ -10,11 +10,29 @@ class SettingController extends AdminController
 	{
 		$this->load->model('Setting');
 
-		$this->data['settings']  = $this->model->setting->getSettings();
+		$this->data['settings']  = $this->model->setting->getSettings('general');
 		$this->data['languages'] = languages();
 
 		$this->view->render('setting/general', $this->data);
 	}
+
+    public function myinfo()
+    {
+        $this->load->model('Setting');
+
+        $this->data['settings']  = $this->model->setting->getSettings('ownerinfo');
+
+        $this->view->render('setting/myinfo', $this->data);
+    }
+
+     public function social()
+    {
+        $this->load->model('Setting');
+
+        $this->data['settings']  = $this->model->setting->getSettings('social');
+
+        $this->view->render('setting/social', $this->data);
+    }
 
 	public function menus()
 	{

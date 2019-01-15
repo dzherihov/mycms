@@ -17,7 +17,6 @@ class Config
         if (!Repository::retrieve($group, $key)) {
             self::file($group);
         }
-
         return Repository::retrieve($group, $key);
     }
 
@@ -44,7 +43,7 @@ class Config
     public static function file($group = 'main')
     {
         $path = path('config') . '\\' . $group . '.php';
-  
+
         // Check that the file exists before we attempt to load it.
         if (file_exists($path)) {
             // Get items from the file.

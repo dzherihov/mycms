@@ -41,7 +41,8 @@ class Theme
 
     public static function getUrl()
     {
-        $currentTheme = Config::item('defaultTheme', 'main');
+      //  $currentTheme = Config::item('defaultTheme', 'main');
+        $currentTheme = \Setting::get('active_theme');
         $baseUrl      = Config::item('baseUrl', 'main');
 
         return sprintf(self::URL_THEME_MASK, $baseUrl, $currentTheme);
@@ -53,6 +54,12 @@ class Theme
         $description      = Setting::get('description');
 
         echo $nameSite . ' | ' . $description;
+    }
+    public static function field($key)
+    {
+        $field = Setting::get($key);
+
+        echo $field;
     }
 
 

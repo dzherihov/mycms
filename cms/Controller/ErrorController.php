@@ -6,7 +6,8 @@ class ErrorController extends CmsController
 {
 	public function page404()
 	{
-		echo '404 Page';
+		$data = ['name' => 'Denis'];
+		$this->view->render('404', $data);
 	}
 }
 

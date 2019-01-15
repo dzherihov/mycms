@@ -33,6 +33,13 @@ var page = {
         formData.append('page_id', $('#formPageId').val());
         formData.append('title', $('#formTitle').val());
         formData.append('content', CKEDITOR.instances.editor1.getData());
+        formData.append('seo_description', $('#formSeoDescription').val());
+        formData.append('seo_keywords', $('#formSeoKeywords').val());
+        formData.append('status', $('#status').val());
+         formData.append('category', $('#category').val());
+        formData.append('imagepage', $('#imagepage').val());
+        formData.append('segment', $('#formSegment').val());
+        formData.append('type', $('#type').val());
 
         $.ajax({
             url: '/admin/page/update/',

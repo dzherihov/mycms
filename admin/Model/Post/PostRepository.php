@@ -39,11 +39,11 @@ class PostRepository extends Model
 	public function createPost($params)
 	{
 		$post = new Post;
-		$post->setTitle($params['title']);
 		$post->setAuth($params['id_author']);
+		$post->setTitle($params['title']);
+		$post->setContent($params['content']);
 		$post->setSeoDescr($params['seo_description']);
 		$post->setSeoKeyw($params['seo_keywords']);
-		$post->setContent($params['content']);
 		$post->setStatus($params['status']);
 		$postId = $post->save();
 

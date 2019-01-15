@@ -5,7 +5,6 @@ var post = {
         var formData = new FormData();
         var button = $(element);
 
-
         formData.append('title', $('#formTitle').val());
         formData.append('id_author', $('#formAuthId').val());
         formData.append('seo_description', $('#formSeoDescription').val());

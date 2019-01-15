@@ -30,6 +30,8 @@
 	$this->router->add('settings-general', '/admin/settings/general/', 'SettingController:general');
 	$this->router->add('settings-menus', '/admin/settings/appearance/menus/', 'SettingController:menus');
 	$this->router->add('settings-theme', '/admin/settings/appearance/themes/', 'SettingController:themes');
+	$this->router->add('settings-myinfo', '/admin/settings/myinfo/', 'SettingController:myinfo');
+	$this->router->add('settings-social', '/admin/settings/social/', 'SettingController:social');
 	//Setting Routes (POST)
 	$this->router->add('settings-update', '/admin/settings/update/', 'SettingController:update', 'POST');
 	$this->router->add('setting-add-menu', '/admin/setting/ajaxMenuAdd/', 'SettingController:ajaxMenuAdd', 'POST');

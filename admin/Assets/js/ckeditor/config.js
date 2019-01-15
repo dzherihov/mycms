@@ -8,6 +8,18 @@
 	// config.language = 'fr';
 
 	CKEDITOR.editorConfig = function( config ) {
+	config.extraPlugins = 'html5video';
+	//config.removePlugins = 'image';
+	//config.extraPlugins = 'easyimage';
+
+	//config.extraPlugins = 'uploadcare';
+	//config.extraPlugins = 'imgupload';
+
+	//config.skin = 'minimalist';
+
+	//config.extraPlugins = 'imageuploader';
+	//config.extraPlugins = 'videodetector';
+
 	config.toolbarGroups = [
 		{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
 		{ name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
@@ -28,5 +40,7 @@
 		// config.uiColor = '#AADC6E';
 
 		config.removeButtons = 'Form,Radio,Checkbox,TextField,Textarea,Select,Button,ImageButton,HiddenField,Flash,Iframe,PageBreak,About,Language,SelectAll,Scayt,Replace,Find,Cut,Copy,Paste,PasteText,PasteFromWord,Print,NewPage,Save,Anchor';
+
+
 };
 

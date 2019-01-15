@@ -6,14 +6,15 @@ use Engine\Model;
 
 class SettingRepository extends Model
 {
-	const SECTION_GENERAL = 'general';
+	//const SECTION_GENERAL = 'general';
 
-	public function getSettings()
+	public function getSettings($key)
 	{
+
 		$sql = $this->queryBuilder
 				->select()
 				->from('setting')
-				->where('section', self::SECTION_GENERAL)
+				->where('section',$key)
 				->orderBy('id', 'ASC')
 				->sql();
 

@@ -4,6 +4,7 @@ var setting = {
     update: function(element) {
 
         var formData = $('#settingForm').serialize();
+         //formData.append('fileavatar', $('#idFile').val());
         var button = $(element);
         $.ajax({
             url: '/admin/settings/update/',

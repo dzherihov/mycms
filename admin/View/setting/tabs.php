@@ -8,4 +8,11 @@
     <a class="<?php if($_SERVER['REQUEST_URI']=='/admin/settings/appearance/menus/'){echo 'active';} ?> item" href="/admin/settings/appearance/menus/">
         Menus
     </a>
+    <a class="<?php if($_SERVER['REQUEST_URI']=='/admin/settings/myinfo/'){echo 'active';} ?> item"  href="/admin/settings/myinfo/">
+        My info
+    </a>
+     <a class="<?php if($_SERVER['REQUEST_URI']=='/admin/settings/social/'){echo 'active';} ?> item"  href="/admin/settings/social/">
+        Social
+    </a>
+
 </div>

@@ -24,14 +24,14 @@
                 <div class="four wide column">
                     <div class="ui card">
                         <div class="image">
-                            <img src="<?= $theme->screen ?>">
+                            <img class="img-theme" src="<?= $theme->screen ?>">
                         </div>
                         <div class="content">
                             <span class="header"><?= $theme->name ?></span>
                             <div class="meta">
                                 <span>Version: <?= $theme->version ?></span>
                             </div>
-                            <div class="description">
+                            <div class="description description-theme">
                                 <?= $theme->description ?>
                             </div>
                         </div>
