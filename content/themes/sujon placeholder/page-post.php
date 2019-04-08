@@ -9,13 +9,13 @@
 
 				<div class="row">
 
-					<div class="col m8 s12">
+					<div class="col s12">
 
 						<div class="blogs mb-30 ">
 
 							<div class="card">
 
-								<div class="card-image lazyimg">
+								<div class="card-image lazyimg imageblog">
 									  <img class="js-lazy-image" src="<?php echo Page::getStore()->imagepage ?>" alt="Image">
 								</div>
 								<!-- /.card-image -->
@@ -93,15 +93,7 @@
 								</div>
 								 <?php else: ?>
 									<div class="col m6 s12">
-									<div class="sb-prv-post">
-										<div class="pn-img left">
-											<img src="/content/themes/sujon placeholder/img/img1.jpg" alt="Image">
-										</div>
-										<div style="" class="pn-text left-align">
-											
-										</div>
-									</div>
-									<!-- /.sb-prv-post -->
+
 								</div>
 								<?php  endif; ?>
 								<!-- colm6 -->
@@ -120,15 +112,7 @@
 								</div>
 								<?php else: ?>
 									<div class="col m6 s12">
-									<div class="sb-nxt-post">
-										<div class="pn-img right">
-											<img src="/content/themes/sujon placeholder/img/img2.jpg" alt="Image">
-										</div>
-										<div style="" class="pn-text right-align">
-											
-										</div>
-									</div>
-									<!-- /.sb-nxt-post -->
+
 								</div>
 								<?php  endif; ?>
 								<!-- colm6 -->
@@ -147,19 +131,7 @@
 
 
 				
-					<div class="col s12 m4 l4">
 
-						<?php $this->theme->sidebar('itsme'); ?>
-						<!-- /.sidebar-testimonial -->
-
-						<?php $this->theme->sidebar('toppost'); ?>
-						<!-- /.featured-posts -->
-		
-						<?php $this->theme->sidebar('subscribe'); ?>
-						<!-- /.sidebar-subscribe -->
-						
-					</div>	
-					<!-- colm4 -->
 					
 				</div>
 				<!-- row -->

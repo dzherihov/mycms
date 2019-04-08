@@ -68,7 +68,7 @@
 
 				<div class="owl-carousel small-carousel owl-theme">
 						<?php $i=0; ?>
-						<?php foreach (Post::getPage('publish', 'post', 'date') as $item): ?>
+						<?php foreach (Post::getPage('publish', 'portfolio', 'date') as $item): ?>
                         <?php $i++; if ($i >= 10) { break;} ?>
 						<div class="item">
 						<div class="card horizontal">
@@ -86,7 +86,7 @@
 									
 									<ul class="post-mate right">
 										<li>
-											<i class="icofont icofont-eye-alt"></i> 32
+											<i class="icofont icofont-eye-alt"></i> <?php echo $item->qual_view ?>
 										</li>
 									</ul>
 									<!-- /.post-mate -->

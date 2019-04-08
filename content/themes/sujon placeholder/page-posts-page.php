@@ -6,7 +6,7 @@
 			<div class="container">
 				<div class="row">
 
-					<div class="col s12 m8 l8">
+					<div class="col s12">
 
 
 						<div class="slider mb-30">
@@ -65,7 +65,7 @@
 								<div class="blogs mb-30">
 									<div class="card">
 										<div class="card-image lazyimg">
-											<a href="<?php echo 'http://test1.ru' . '/' . $item->segment ?>" class="waves-effect">
+											<a href="<?php echo 'http://test1.ru' . '/' . $item->segment ?>" style="width: 100%" class="waves-effect imageblog">
 											<img class="size-ban js-lazy-image z-index" src="<?php echo $item->imagepage ?>" alt="Image"></a>
 										</div>
 										<!-- /.card-image -->
@@ -105,7 +105,7 @@
 							<!-- colm6 -->
  							<?php  else: ?>
 
-							<div class="col m6 s12 itemblog">
+							<div class="col m4 s12 itemblog">
 								<div class="blogs mb-30">
 									<div class="card blockblog">
 										<div class="card-image lazyimg">
@@ -164,20 +164,6 @@
 
 
 
-					<div class="col s12 m4 l4">
-
-						
-						<?php $this->theme->sidebar('itsme'); ?>
-						<!-- /.sidebar-testimonial -->
-
-						<?php $this->theme->sidebar('toppost'); ?>
-						<!-- /.featured-posts -->
-		
-						<?php $this->theme->sidebar('subscribe'); ?>
-						<!-- /.sidebar-subscribe -->
-						
-					</div>	
-					<!-- colm4 -->
 					
 				</div>
 				<!-- row -->

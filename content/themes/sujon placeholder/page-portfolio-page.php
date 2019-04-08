@@ -5,7 +5,7 @@
 
 			<div class="container">
 				<div class="row">
-					<div class="col s12 m8 l8">
+					<div class="col s12">
 						<div class="row containerblog">
 							<div class="toolbar mb2 mt2">
 							  <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
@@ -22,7 +22,7 @@
 							<?php foreach (Post::getPage('publish', 'portfolio', 'date') as $item): ?>
                         	<?php $i++; if ($i > 9) { break;} ?> 	
                         	<?php $cat = explode(", ", $item->category); ?>
-							<div class="col m6 s12 itemblog scale-anm All <?php for ($i=0; $i < count($cat); $i++){echo $cat[$i] . ' ';} ?>">
+							<div class="col m4 s12 itemblog scale-anm All <?php for ($i=0; $i < count($cat); $i++){echo $cat[$i] . ' ';} ?>">
 								<div class="blogs mb-30">
 									<div class="card blockblog">
 										<div class="card-image lazyimg">
@@ -86,20 +86,6 @@ row -->
 
 
 
-					<div class="col s12 m4 l4">
-
-						
-						<?php $this->theme->sidebar('itsme'); ?>
-						<!-- /.sidebar-testimonial -->
-
-						<?php $this->theme->sidebar('toppost'); ?>
-						<!-- /.featured-posts -->
-		
-						<?php $this->theme->sidebar('subscribe'); ?>
-						<!-- /.sidebar-subscribe -->
-						
-					</div>	
-					<!-- colm4 -->
 					
 				</div>
 				<!-- row -->
